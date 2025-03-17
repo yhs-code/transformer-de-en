@@ -155,7 +155,7 @@ class Translator:
 if __name__ == "__main__":
     
     # 这个地方的exp_name要自己修改名字
-    state_dict = torch.load(f"checkpoints/hidden_dim512-dropout0.1-label_smooth0.1-warm5000/best.ckpt", map_location=device)
+    state_dict = torch.load(f"checkpoints/{exp_name}/best.ckpt", map_location=device)
     
     sentence_list = [
         "Mann in einem kleinen weißen Boot auf einem See.",  # Man in a small white boat on a lake.

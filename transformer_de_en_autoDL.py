@@ -1125,6 +1125,9 @@ config = {
 # tokenizer
 tokenizer = Tokenizer(word2idx=word2idx, idx2word=idx2word, max_length=config["max_length"])
 
+# exp_name = "translate-transformer-{}".format("share" if config["share_embedding"] else "not-share")
+exp_name = "hidden_dim{}-dropout{}-label_smooth{}-warm{}".format(config["d_model"], config["dropout"], config["label_smoothing"], config["warmup_steps"])
+
 if __name__ == "__main__":
     
 
@@ -1150,8 +1153,7 @@ if __name__ == "__main__":
     # 1. tensorboard 可视化
     if not os.path.exists("runs"):
         os.mkdir("runs")
-    # exp_name = "translate-transformer-{}".format("share" if config["share_embedding"] else "not-share")
-    exp_name = "hidden_dim{}-dropout{}-label_smooth{}-warm{}".format(config["d_model"], config["dropout"], config["label_smoothing"], config["warmup_steps"])
+    
     tensorboard_callback = TensorBoardCallback(f"runs/{exp_name}")
     # tensorboard_callback.draw_model(model, [1, MAX_LENGTH])
     # 2. save best

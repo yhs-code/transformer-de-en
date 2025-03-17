@@ -1,37 +1,19 @@
-# Transformer
+# Transformer-de-en
 
 #### 介绍
-Transformer学习
+学习并实现Transformer从德语到英语的翻译任务，采用wmt16语料库
 
 #### 软件架构
-软件架构说明
+训练代码：transformer_de_en_autoDL.py
+推理代码：推理.py
 
-
-#### 安装教程
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
+#### 操作流程
+1、在transformer-de-en目录下先执行以下命令对数据集进行BPE分词：sh data_multi30k.sh wmt16 wmt16_cut de en
+2、分词结束后执行以下指令开启训练：python3 transformer_de_en_autoDL.py
+3、训练结束后执行：python3 推理.py即可执行使用翻译任务
 
 #### 使用说明
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1. 翻译设置的最大长度是128
+2. 如果要修改相关配置重新进行训练，请打开transformer_de_en_autoDL.py文件后修改config字典（通过关键字搜索：config = ）
 
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
-
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
